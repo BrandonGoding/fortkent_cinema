@@ -1,0 +1,30 @@
+@import '../../styles/variables';
+
+.header {
+    width: 100%;
+    background-color: $primary-color;
+    color: $secondary-color;
+    padding: $padding-medium 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: $font-size-large;
+    font-family: $font-primary;
+    font-size: $font-size-large;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .header-content h1 {
+        font-size: $font-size-medium;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content h1 {
+        font-size: $font-size-small;
+    }
+}
