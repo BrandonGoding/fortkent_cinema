@@ -1,54 +1,71 @@
 @import '../../styles/variables';
 
-.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: $primary-color;
-    color: $secondary-color;
-    text-align: center;
-    padding: $padding-small 0;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-}
+            .footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                background-color: $primary-color;
+                color: $secondary-color;
+                padding: $padding-small 0;
+                box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+            }
 
-.footer-content {
-    font-family: $font-primary;
-    font-size: $font-size-small;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px; // Reduced gap for tighter spacing
-}
+            .footer-content {
+                font-family: $font-primary;
+                font-size: $font-size-small;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: $padding-small;
+                padding-left: $padding-small; // Default padding for smaller screens
+                padding-right: $padding-small;
+            }
 
-.social-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: $padding-small;
-}
+            .footer-content p {
+                margin: 0;
+            }
 
-.social-links a {
-    color: $secondary-color;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: $font-size-medium;
-}
+            .social-links {
+                display: flex;
+                gap: $padding-small;
+            }
 
-.social-links a:hover {
-    color: $accent-color;
-}
+            .social-links a {
+                color: $secondary-color;
+                text-decoration: none;
+                transition: color 0.3s ease;
+                font-size: $font-size-medium;
+            }
 
-@media (max-width: 768px) {
-    .social-links a {
-        font-size: $font-size-small;
-    }
-}
+            .social-links a:hover {
+                color: $accent-color;
+            }
 
-@media (max-width: 480px) {
-    .social-links {
-        gap: $padding-small;
-    }
-    .social-links a {
-        font-size: 0.9rem;
-    }
-}
+            @media (max-width: 768px) {
+                .footer-content {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .social-links {
+                    justify-content: center;
+                }
+
+                .social-links a {
+                    font-size: $font-size-small; // Reduce font size for smaller screens
+                }
+            }
+
+            @media (min-width: 768px) {
+                .footer-content {
+                    padding-left: $padding-large; // Add larger padding for bigger screens
+                    padding-right: $padding-large;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .social-links a {
+                    font-size: 0.9rem; // Further reduce font size for very small screens
+                }
+            }
