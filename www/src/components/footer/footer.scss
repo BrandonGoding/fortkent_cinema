@@ -6,18 +6,17 @@
                 width: 100%;
                 background-color: $primary-color;
                 color: $secondary-color;
-                padding: $padding-small 0;
+                padding: 4px 0;
                 box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
             }
 
             .footer-content {
-                font-family: $font-primary;
+                font-family: $font-secondary;
                 font-size: $font-size-small;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 flex-wrap: wrap;
-                gap: $padding-small;
                 padding-left: $padding-small; // Default padding for smaller screens
                 padding-right: $padding-small;
             }
@@ -35,7 +34,7 @@
                 color: $secondary-color;
                 text-decoration: none;
                 transition: color 0.3s ease;
-                font-size: $font-size-medium;
+                font-size: $font-size-small;
             }
 
             .social-links a:hover {

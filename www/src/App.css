@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to bottom, #800020, #000000); /* Subtle gradient for a classic look */
+    background: linear-gradient(to bottom, #000000, #1a1a1a); /* Subtle black gradient for a classic look */ /* Subtle gradient for a classic look */
     color: #FFD700; /* Gold text color for contrast */
     font-family: 'Lato', sans-serif; /* Secondary font for body text */
     margin: 0 0 100px 0;

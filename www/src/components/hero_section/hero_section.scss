@@ -7,6 +7,10 @@
   align-items: center;
   justify-content: center;
 
+  @media (max-width: 768px) {
+    display: none; /* Hide on screens smaller than 768px */
+  }
+
   // Background image with sepia effect
   background: url('./projector-background.jpg') center center/cover no-repeat;
   filter: sepia(0.8); // Apply sepia effect with 80% intensity
