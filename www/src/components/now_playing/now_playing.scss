@@ -44,6 +44,11 @@
         margin: 0 0 5px 0;
         font-size: $font-size-small;
       }
+      .movie-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+      }
     }
 
   }

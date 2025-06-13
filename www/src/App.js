@@ -9,14 +9,14 @@ const movies = [
     rating: "PG-13",
     length: "1h 34m",
     youtubeId: "LhRXf-yEQqA",
-    imdbUrl: "https://www.imdb.com/title/tt1674782/"
+    imdbId: "tt1674782"
   },
   {
     title: "How to Train Your Dragon",
     rating: "PG",
     length: "2h 5m",
     youtubeId: "22w7z_lT6YM",
-    imdbUrl: "https://www.imdb.com/title/tt26743210/"
+    imdbId: "tt26743210"
   }
 ];
 
