@@ -4,6 +4,7 @@ import Footer from "./components/footer/footer";
 import HeroSection from "./components/hero_section/hero_section";
 import NowPlaying from "./components/now_playing/now_playing";
 import Showtimes from "./components/showtimes/showtimes";
+import Rates from "./components/rates/rates";
 
 const movies = [
   {
@@ -95,7 +96,8 @@ function App() {
         <div className="Body">
           <HeroSection />
             <NowPlaying movies={movies} />
-            <Showtimes movies={movies} />
+            <Showtimes />
+            <Rates />
         </div>
       <Footer />
     </div>

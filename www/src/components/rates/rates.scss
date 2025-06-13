@@ -1,0 +1,58 @@
+@import '../../styles/variables.scss';
+
+.rates {
+  padding: $padding-large;
+  color: $accent-color;
+  font-family: $font-secondary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-family: $font-primary;
+    color: $secondary-color;
+    margin-bottom: $padding-medium;
+    font-size: $font-size-large;
+    text-align: center;
+  }
+
+  .rates-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $padding-large;
+    justify-content: center;
+  }
+
+  .rates-card {
+    background: $primary-color;
+    border-radius: 8px;
+    padding: $padding-medium;
+    flex: 1 1 120px;
+    max-width: 500px;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+    h3 {
+      color: $secondary-color;
+      font-size: $font-size-medium;
+      margin-bottom: $padding-small;
+      font-family: $font-primary;
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: $padding-small;
+        font-size: $font-size-small;
+        text-align: center;
+      }
+    }
+  }
+}
