@@ -1,58 +1,67 @@
+import React, {useState} from 'react';
 import './showtimes.scss';
 
-                              function formatDate(dateStr) {
-                                const date = new Date(dateStr);
-                                const month = date.toLocaleString('en-US', { month: 'long' });
-                                const day = date.getDate();
-                                const suffix = (d) => {
-                                  if (d > 3 && d < 21) return 'th';
-                                  switch (d % 10) {
-                                    case 1: return 'st';
-                                    case 2: return 'nd';
-                                    case 3: return 'rd';
-                                    default: return 'th';
-                                  }
-                                };
-                                return `${month} ${day}${suffix(day)}`;
-                              }
+const DAYS = ['Thursday', 'Friday', 'Saturday', 'Sunday'];
+const DAY_ABBR = ['Thu', 'Fri', 'Sat', 'Sun'];
 
-                              function formatTime(timeStr) {
-                                const [hour, minute] = timeStr.split(':').map(Number);
-                                const ampm = hour >= 12 ? 'PM' : 'AM';
-                                const hour12 = hour % 12 === 0 ? 12 : hour % 12;
-                                return `${hour12}:${minute.toString().padStart(2, '0')} ${ampm}`;
-                              }
 
-                              const Showtimes = ({ movies }) => (
-                                <section className="showtimes">
-                                  <h2>Showtimes at Fort Kent Cinema</h2>
-                                  <div className="showtimes-list">
-                                    {movies.length === 0 ? (
-                                      <p>No showtimes available.</p>
-                                    ) : (
-                                      movies.map((movie, idx) => (
-                                        <div className="showtimes-card" key={idx}>
-                                          <div className="showtimes-movie">
-                                            <h3>{movie.title}</h3>
-                                            <ul>
-                                              {movie.showTimes.map((show, i) => (
-                                                <li key={i}>
-                                                  <strong>{formatDate(show.date)}:</strong>{' '}
-                                                  {show.times.map((t, j) => (
-                                                    <span key={j} className={t.is_matinee ? 'matinee' : ''}>
-                                                      {formatTime(t.start_time)}{t.is_matinee ? ' (Matinee)' : ''}
-                                                      {j < show.times.length - 1 ? ', ' : ''}
-                                                    </span>
-                                                  ))}
-                                                </li>
-                                              ))}
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      ))
-                                    )}
-                                  </div>
-                                </section>
-                              );
+function formatTime(timeStr) {
+    const [hour, minute] = timeStr.split(':').map(Number);
+    const ampm = hour >= 12 ? 'PM' : 'AM';
+    const hour12 = hour % 12 === 0 ? 12 : hour % 12;
+    return `${hour12}:${minute.toString().padStart(2, '0')} ${ampm}`;
+}
 
-                              export default Showtimes;
+const Showtimes = ({movies}) => {
+    const [selectedDay, setSelectedDay] = useState(DAYS[0]);
+
+    const getShowTimesForDay = (day) => {
+        if (!movies.length) return [];
+        const dayIndex = DAYS.indexOf(day) - 1;
+        const show = movies[0].showTimes[dayIndex];
+        return show ? show.times : [];
+    };
+
+    return (
+        <section className="showtimes">
+            <h2>Showtimes at Fort Kent Cinema</h2>
+            <div className="showtimes-card showtimes-card--full">
+                <div className="showtimes-tabs">
+                    {DAYS.map((day, i) => (
+                        <button
+                            key={day}
+                            className={selectedDay === day ? 'active' : ''}
+                            onClick={() => setSelectedDay(day)}
+                        >
+                            <span className="showtimes-tab-full">{day}</span>
+                            <span className="showtimes-tab-abbr">{DAY_ABBR[i]}</span>
+                        </button>
+                    ))}
+                </div>
+                <div className="showtimes-films">
+                    {movies.length > 0
+                        ? `${movies.map(m => m.title).join(' and ')}`
+                        : ''}
+                </div>
+                <div className="showtimes-movie">
+                    <ul>
+                        <li>
+                            {getShowTimesForDay(selectedDay).length === 0 ? (
+                                <span>No showtimes for this day.</span>
+                            ) : (
+                                getShowTimesForDay(selectedDay).map((t, j, arr) => (
+                                    <span key={j} className={t.is_matinee ? 'matinee' : ''}>
+                                                              {formatTime(t.start_time)}{t.is_matinee ? ' (Matinee)' : ''}
+                                        {j < arr.length - 1 ? ', ' : ''}
+                                                            </span>
+                                ))
+                            )}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Showtimes;
