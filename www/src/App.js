@@ -2,6 +2,7 @@ import './App.css';
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import NowPlaying from "./components/now_playing/now_playing";
+import Showtimes from "./components/showtimes/showtimes";
 
 const movies = [
   {
@@ -9,14 +10,80 @@ const movies = [
     rating: "PG-13",
     length: "1h 34m",
     youtubeId: "LhRXf-yEQqA",
-    imdbId: "tt1674782"
+    imdbId: "tt1674782",
+    showTimes: [
+      {
+        date: "2024-06-13",
+        times: [
+          {
+            "start_time": "18:00",
+            "is_matinee": false,
+          }
+        ]
+      },
+      {
+        date: "2024-06-14",
+        times: [
+            {
+            "start_time": "15:00",
+            "is_matinee": true,
+          },
+          {
+            "start_time": "18:00",
+            "is_matinee": false,
+          }
+        ]
+      },
+        {
+        date: "2024-06-15",
+        times: [
+          {
+            "start_time": "17:00",
+            "is_matinee": false,
+          }
+        ]
+      },
+    ]
   },
   {
     title: "How to Train Your Dragon",
     rating: "PG",
     length: "2h 5m",
     youtubeId: "22w7z_lT6YM",
-    imdbId: "tt26743210"
+    imdbId: "tt26743210",
+    showTimes: [
+      {
+        date: "2024-06-13",
+        times: [
+          {
+            "start_time": "18:00",
+            "is_matinee": false,
+          }
+        ]
+      },
+      {
+        date: "2024-06-14",
+        times: [
+            {
+            "start_time": "15:00",
+            "is_matinee": true,
+          },
+          {
+            "start_time": "18:00",
+            "is_matinee": false,
+          }
+        ]
+      },
+        {
+        date: "2024-06-15",
+        times: [
+          {
+            "start_time": "17:00",
+            "is_matinee": false,
+          }
+        ]
+      },
+    ]
   }
 ];
 
@@ -26,6 +93,7 @@ function App() {
       <Header />
         <div className="Body">
             <NowPlaying movies={movies} />
+            <Showtimes movies={movies} />
         </div>
       <Footer />
     </div>
