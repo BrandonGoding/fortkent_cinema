@@ -17,7 +17,7 @@ const Showtimes = () => {
   return (
     <section className="showtimes">
       <h2>Showtimes at Fort Kent Cinema</h2>
-      <div className="showtimes-card showtimes-card--full">
+      <div className="showtimes-card showtimes-card--full spotlight">
         <div className="showtimes-tabs">
           {DAYS.map((day, i) => (
             <button

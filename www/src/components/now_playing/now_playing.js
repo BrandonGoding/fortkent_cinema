@@ -9,7 +9,7 @@ const NowPlaying = ({movies}) => (
                 <p>No films currently playing.</p>
             ) : (
                 movies.map((movie, idx) => (
-                    <div className="movie-card" key={idx}>
+                    <div className="movie-card spotlight" key={idx}>
                         <div className="movie-info">
                             <h3>{movie.title}</h3>
                             <p>Rating: {movie.rating}</p>

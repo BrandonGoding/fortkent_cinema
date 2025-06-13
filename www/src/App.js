@@ -5,6 +5,8 @@ import HeroSection from "./components/hero_section/hero_section";
 import NowPlaying from "./components/now_playing/now_playing";
 import Showtimes from "./components/showtimes/showtimes";
 import Rates from "./components/rates/rates";
+import './utils/spotlight/spotlight.js'
+import './utils/spotlight/spotlight.scss';
 
 const movies = [
   {

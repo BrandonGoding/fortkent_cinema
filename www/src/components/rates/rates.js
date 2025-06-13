@@ -4,7 +4,7 @@ const Rates = () => (
   <section className="rates">
     <h2>Fort Kent Cinema Rates</h2>
     <div className="rates-list">
-      <div className="rates-card">
+      <div className="rates-card spotlight">
         <h3>Ticket Rates</h3>
         <ul>
           <li>Adults: $10.00</li>
@@ -13,7 +13,7 @@ const Rates = () => (
           <li>Military & First Responders: $8.00</li>
         </ul>
       </div>
-      <div className="rates-card">
+      <div className="rates-card spotlight">
         <h3>Popcorn Rates</h3>
         <ul>
           <li>Small: $4.00</li>
