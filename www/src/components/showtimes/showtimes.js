@@ -59,6 +59,9 @@ const Showtimes = ({movies}) => {
                         </li>
                     </ul>
                 </div>
+                <div>
+                    Closed Monday - Wednesday
+                </div>
             </div>
         </section>
     );

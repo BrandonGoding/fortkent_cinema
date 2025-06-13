@@ -1,6 +1,7 @@
 import './App.css';
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
+import HeroSection from "./components/hero_section/hero_section";
 import NowPlaying from "./components/now_playing/now_playing";
 import Showtimes from "./components/showtimes/showtimes";
 
@@ -92,6 +93,7 @@ function App() {
     <div className="App">
       <Header />
         <div className="Body">
+          <HeroSection />
             <NowPlaying movies={movies} />
             <Showtimes movies={movies} />
         </div>
