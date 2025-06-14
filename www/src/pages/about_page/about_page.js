@@ -1,20 +1,17 @@
 import './about_page.scss';
 import testImage from './test.jpeg'; // Adjust the path as needed
+import articleImage from './bandltheaters.jpeg';
 
     const AboutPage = () => {
       return (
         <div className="about-page">
           <section className="theater-history">
-            <img src={testImage} alt="Theater History" className="antique-image" />
+            <img src={articleImage} alt="Theater History" className="antique-image" />
             <h2>Theater History</h2>
             <p>
-              Established in the golden age of cinema, Fort Kent Cinema has been a cornerstone of our community,
-              bringing the magic of the silver screen to generations of moviegoers. From silent films to modern blockbusters,
-              our theater has stood the test of time, preserving the charm and nostalgia of classic cinema.
+              This beloved Fort Kent landmark began life as the Savoy Theater in the late 1910s, transitioning into the Century Theater in 1969 to honor the town's centennial, and evolving further in 2014 into today’s Fort Kent Cinema. Over more than a century, it has continually adapted—from silent films with live music, through the digital revolution, to its current role as a cultural and community hub. Its near-closure during the pandemic was met with community action, showcasing local support for its preservation and future.
             </p>
-          </section>
 
-          <section className="fort-kent-today">
             <img src={testImage} alt="Fort Kent Cinema Today" className="antique-image" />
             <h2>Fort Kent Cinema Today</h2>
             <p>
@@ -22,9 +19,7 @@ import testImage from './test.jpeg'; // Adjust the path as needed
               projection and sound systems, while maintaining the classic ambiance that makes our theater unique.
               We are proud to showcase a mix of the latest releases and timeless classics.
             </p>
-          </section>
 
-          <section className="support-fort-kent">
             <img src={testImage} alt="Support The Fort Kent Cinema" className="antique-image" />
             <h2>Support The Fort Kent Cinema</h2>
             <p>
