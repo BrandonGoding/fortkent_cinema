@@ -6,9 +6,9 @@ import HeroSection from "./components/hero_section/hero_section";
 import NowPlaying from "./components/now_playing/now_playing";
 import Showtimes from "./components/showtimes/showtimes";
 import Rates from "./components/rates/rates";
-import AboutPage from "./pages/about_page/about_page";
 import './utils/spotlight/spotlight.js'
 import './utils/spotlight/spotlight.scss';
+import ComingSoonPage from "./pages/coming_soon_page/coming_soon_page";
 
 
 
@@ -30,10 +30,16 @@ function App() {
                                 </>
                             }
                         />
+                        {/*<Route*/}
+                        {/*    path="/about-fort-kent-cinema"*/}
+                        {/*    element={*/}
+                        {/*        <AboutPage />*/}
+                        {/*    }*/}
+                        {/*/>*/}
                         <Route
-                            path="/about-fort-kent-cinema"
+                            path="coming-soon"
                             element={
-                                <AboutPage />
+                                <ComingSoonPage />
                             }
                         />
                     </Routes>
